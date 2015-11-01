@@ -1,10 +1,21 @@
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
  <header class="entry-header">
     <?php the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
     <div class="entry-meta">
-      <span class="entry-date"><a href="<?php the_permalink() ?>" rel="bookmark"><time class="entry-date" datetime="<?php the_date('c') ?>"><?php echo esc_html( get_the_date() ) ?></time></a></span>
+      <span class="entry-date">Publicado el <a href="<?php the_permalink() ?>" rel="bookmark"><time class="entry-date" datetime="<?php the_date('c') ?>"><?php echo esc_html( get_the_date() ) ?></time></a></span>
     </div>
   </header>
+
+  <?php if (has_post_thumbnail()): ?>
+  <div class="entry-thumbnail">
+    <?php if (is_singular()): ?>
+      <?php the_post_thumbnail('full-width',array('class'=>'img-responsive')) ?>
+    <?php else: ?>
+      <?php the_post_thumbnail('mid-width',array('class'=>'img-responsive')) ?>
+    <?php endif ?>
+  </div>
+  <?php endif ?>
 
   <?php if ( is_search() || is_home() || is_front_page() ) : ?>
   <div class="entry-summary">

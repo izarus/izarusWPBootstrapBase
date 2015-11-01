@@ -16,23 +16,25 @@
 </head>
 <body <?php body_class(); ?>>
 
-<!-- BARRA DE NAVEGACION RESPONSIVE -->
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
-        <span class="sr-only">Menu</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><?php bloginfo('name') ?></a>
-    </div>
+<header class="site-header">
+  <!-- BARRA DE NAVEGACION RESPONSIVE -->
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+          <span class="sr-only">Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo site_url() ?>"><?php bloginfo('name') ?></a>
+      </div>
 
-    <div class="collapse navbar-collapse" id="main-menu">
-      <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'menu_id' => 'main-menu' ) ); ?>
+      <div class="collapse navbar-collapse" id="main-menu">
+        <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'nav navbar-nav', 'menu_id' => 'main-menu' ) ); ?>
 
+      </div>
     </div>
-  </div>
-</nav>
-<!-- FIN BARRA DE NAVEGACION -->
+  </nav>
+  <!-- FIN BARRA DE NAVEGACION -->
+</header>
